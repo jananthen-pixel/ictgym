@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 20px 50px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 2px solid #e53935; 
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e53935;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: #e53935; 
+}
+
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+main {
+    padding: 40px 50px;
+    min-height: 80vh;
+    transition: filter 0.3s ease; 
+    
+}
+
+
+.blur-bg {
+    filter: blur(8px);
+    pointer-events: none;
+}
+
+/
+.fade-in {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
+.card {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #333;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(229, 57, 53, 0.2);
+    border-color: #e53935;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #2a2a2a;
+    padding: 40px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    z-index: 1000;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.8);
+    border: 2px solid #e53935;
+    text-align: center;
+    animation: zoomIn 0.3s ease-out;
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+.modal h2 {
+    color: #e53935;
+    margin-bottom: 15px;
+}
+
+.modal p {
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+
+.close-btn {
+    background-color: #e53935;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.close-btn:hover {
+    background-color: #b71c1c;
+}
+
+
+.pricing-card {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #333;
+}
+.pricing-card h2 { color: #fff; }
+.pricing-card .price {
+    font-size: 36px;
+    color: #e53935;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-top: 1px solid #333;
+    margin-top: auto;
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 15px 20px;
+    }
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none; 
+        margin-top: 20px;
+    }
+    nav ul.show {
+        display: flex; 
+    }
+    main { padding: 20px; }
+}

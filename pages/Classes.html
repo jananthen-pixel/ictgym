@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymPro - Classes</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">GymPro Center</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul id="navLinks">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="classes.html" class="active">Classes</a></li>
+            <li><a href="trainers.html">Trainers</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="mainContent" class="fade-in">
+        <h1 style="text-align: center; color: #e53935;">Our Fitness Classes</h1>
+        <p style="text-align: center; margin-bottom: 30px;">Click on a class to view full details.</p>
+
+        <div class="grid-container">
+          
+            <div class="card" onclick="openModal('Cardio Training', 'Intense heart-pumping exercises to burn calories, improve lung capacity, and boost overall stamina. Available daily at 6 AM and 6 PM. Duration: 1 Hour.')">
+                <h3>Cardio</h3>
+                <p>Improve your stamina</p>
+            </div>
+
+            
+            <div class="card" onclick="openModal('Weight Training', 'Build muscle mass, increase strength, and tone your body using our advanced free weights and machines. Perfect for bodybuilding. Duration: 1.5 Hours.')">
+                <h3>Weight Training</h3>
+                <p>Build muscle and strength</p>
+            </div>
+
+            
+            <div class="card" onclick="openModal('Yoga & Flexibility', 'Calm your mind, improve flexibility, and strengthen your core. Our expert gurus will guide you through advanced asanas. Duration: 45 Mins.')">
+                <h3>Yoga</h3>
+                <p>Flexibility and peace</p>
+            </div>
+
+            
+            <div class="card" onclick="openModal('CrossFit', 'High-intensity functional movements designed to make you fit for any physical challenge. Not for the faint-hearted! Duration: 1 Hour.')">
+                <h3>CrossFit</h3>
+                <p>High intensity workout</p>
+            </div>
+        </div>
+    </main>
+
+    
+    <div id="detailModal" class="modal">
+        <h2 id="modalTitle">Class Name</h2>
+        <p id="modalDesc">Class details will appear here.</p>
+        <button class="close-btn" onclick="closeModal()">Close Details</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 GymPro Fitness Center. All Rights Reserved.UWU-BICT-24-058</p>
+    </footer>
+
+    <script src="..js/script.js"></script>
+</body>
+</html>
